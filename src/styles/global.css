@@ -1,0 +1,62 @@
+:root {
+  --black: #fff;
+  --white: #000;
+  --accent: #ffc60e;
+  --gray-light: #303030;
+  --gray-dark: #dfdfdf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Main content uses Cascadia Code */
+  font-family: "Cascadia Code", "Fira Code", "Courier New", monospace;
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 0.5rem;
+}
+nav a {
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--gray-dark);
+  border-top: 1px solid var(--gray-light);
+  padding-top: 1rem;
+}
