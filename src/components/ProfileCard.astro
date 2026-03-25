@@ -1,0 +1,57 @@
+---
+import { DATA } from '../data/site';
+import { Image } from 'astro:assets';
+import avatarImage from '../assets/arcadia16.png';
+---
+
+<div class="profile-card">
+  <div class="avatar">
+  <Image
+      src={avatarImage}
+      alt={DATA.author}
+      width={150}
+      height={150}
+      loading="eager"/>
+  </div>
+  <div class="social-links">
+    <a href={`https://github.com/${DATA.github}`}>GitHub</a>
+  </div>
+</div>
+
+<style>
+  .profile-card {
+    text-align: center;
+  }
+  .avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  .social-links a {
+    position: relative;
+  }
+  .social-links a::before {
+    content: "[";
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    margin-right: 0.05em;
+  }
+  .social-links a::after {
+    content: "]";
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    margin-left: 0.05em;
+  }
+  .social-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .social-links a:hover::before,
+  .social-links a:hover::after {
+    opacity: 1;
+  }
+
+</style>

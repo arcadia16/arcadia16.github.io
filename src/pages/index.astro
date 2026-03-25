@@ -1,15 +1,31 @@
 ---
-import BaseLayout from '../layouts/Layout.astro';
-import { DATA } from '../data/site'
+import BaseLayout from "../layouts/Layout.astro";
+import { DATA } from "../data/site";
+import ProfileCard from "../components/ProfileCard.astro";
 ---
 
-<BaseLayout title=`Home | ${DATA.author}`>
-  <h1>Welcome, dear traveller.</h1>
-  <p>
-    Here you can get acquianted with my work.
-  </p>
-  <p>
-    This site is built with <a href="https://astro.build">Astro</a> and hosted on
-    <a href="https://pages.github.com">GitHub Pages</a>.
-  </p>
+<BaseLayout title={`Home | ${DATA.author}`}>
+  <div class="split-layout">
+    <div class="left-column">
+      <ProfileCard />
+    </div>
+
+    <div class="right-column">
+      <h1>Hello, <span class="animated-word">{DATA.author}</span> here.</h1>
+      <p>Cybersecurity engineer and software developer.</p>
+      <p>Learning scope:</p>
+      <ul>
+        <li>
+          Pen test TTPs / CTFs (join me on <a
+            href="https://hackthebox.com"
+            target="_blank"
+            rel="noopener noreferrer">HTB</a
+          >)
+        </li>
+        <li>Full-stack development</li>
+        <li>Cryptography shenanigans</li>
+        <li>Assembly magic~</li>
+      </ul>
+    </div>
+  </div>
 </BaseLayout>

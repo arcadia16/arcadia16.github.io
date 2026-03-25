@@ -21,14 +21,15 @@ const { title = DATA.title } = Astro.props;
     <header>
       <nav>
         <a href="/">Home</a>
-        <a href="/about">About</a>
+        <!--<a href="/about">About</a>-->
       </nav>
     </header>
     <main>
       <slot />
     </main>
     <footer>
-        <p>&copy; {new Date().getFullYear()} {DATA.author} </p>
+        <p>{new Date().getFullYear()} - {DATA.author} </p>
+        <p>Built with <a href="https://astro.build">Astro</a></p>
     </footer>
   </div>
 </body>
