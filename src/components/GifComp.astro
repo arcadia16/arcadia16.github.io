@@ -1,0 +1,29 @@
+---
+export interface Props {
+  src: string; // path to GIF (relative to public/ or absolute)
+  alt: string; // alt text for accessibility
+  class?: string; // optional extra CSS classes
+  lazy?: boolean; // whether to lazy‑load (default false)
+}
+
+const { src, alt, class: className, lazy = false } = Astro.props;
+---
+
+<img
+  src={src}
+  alt={alt}
+  width="128"
+  height="128"
+  loading={lazy ? "lazy" : "eager"}
+  class={`pixel-gif ${className || ""}`}
+/>
+
+<style>
+  .pixel-gif {
+    width: 128px;
+    height: 128px;
+    image-rendering: crisp-edges; /* fallback */
+    image-rendering: pixelated; /* modern browsers */
+    image-rendering: -moz-crisp-edges;
+  }
+</style>
