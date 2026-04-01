@@ -1,20 +1,25 @@
 ---
-import { DATA } from '../data/site';
-import { Image } from 'astro:assets';
-import avatarImage from '../assets/arcadia16.png';
+import { DATA } from "../data/site";
+import { Image } from "astro:assets";
+import avatarImage from "../assets/arcadia16.png";
 ---
 
 <div class="profile-card">
   <div class="avatar">
-  <Image
+    <Image
       src={avatarImage}
       alt={DATA.author}
       width={150}
       height={150}
-      loading="eager"/>
+      loading="eager"
+    />
   </div>
   <div class="social-links">
-    <a href={`https://github.com/${DATA.github}`}>GitHub</a>
+    <a
+      href={`https://github.com/${DATA.github}`}
+      target="_blank"
+      rel="noopener noreferrer">GitHub</a
+    >
   </div>
 </div>
 
@@ -53,5 +58,4 @@ import avatarImage from '../assets/arcadia16.png';
   .social-links a:hover::after {
     opacity: 1;
   }
-
 </style>

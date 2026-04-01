@@ -1,6 +1,6 @@
 ---
-import { DATA } from '../data/site';
-import '../styles/global.css';
+import { DATA } from "../data/site";
+import "../styles/global.css";
 
 export interface Props {
   title?: string;
@@ -9,28 +9,28 @@ export interface Props {
 const { title = DATA.title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title}</title>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <!--<a href="/about">About</a>-->
-      </nav>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer>
-        <p>{new Date().getFullYear()} - {DATA.author} </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/tracker">Tracker</a>
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer>
+        <p>{new Date().getFullYear()} - {DATA.author}</p>
         <p>Built with <a href="https://astro.build">Astro</a></p>
-    </footer>
-  </div>
-</body>
+      </footer>
+    </div>
+  </body>
 </html>
